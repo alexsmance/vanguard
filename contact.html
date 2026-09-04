@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="./assets/terra.css" rel="stylesheet" />
+  <script src="./assets/p5.min.js"></script>
+  <style>
+    @view-transition {
+      navigation: auto;
+    }
+    
+    label {
+      margin: .5rem 0;
+    }
+
+    .depth {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+      width: 100%;
+      margin: 0 1rem;
+      display: flex;
+      justify-content: center;
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="purple">
+  <header>
+    <h1 class="heading">Alex Mance</h1>
+  </header>
+  <main>
+    <form class="margin-vertical">
+      <fieldset class="margin-bottom">
+        <label for="name" class="">Name</label>
+        <input type="name" class="depth padding-half" required/>
+      </fieldset>
+      <fieldset class="margin-bottom">
+        <label for="email">Email</label>
+        <input type="email" class="depth padding-half" required/>
+      </fieldset>
+      <button type="submit" class="primary padding margin-vertical subheading text-bold depth">Submit</button>
+    </form>
+  </main>
+</body>
+</html>
