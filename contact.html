@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
   <link href="./assets/terra.css" rel="stylesheet" />
-  <script src="./assets/p5.min.js"></script>
+  <link href="./assets/website.css" rel="stylesheet" />  
   <style>
     @view-transition {
       navigation: auto;
     }
     
+    body {
+      background-color: #333333;
+      color: white;      
+    }
+
     label {
       margin: .5rem 0;
     }
@@ -25,25 +30,115 @@
       display: flex;
       justify-content: center;
       border-radius: 1rem;
+      color: black
+    }
+
+    main {
+      width: 100%;
+      padding: 1rem;      
+    }
+
+    ul {
+      list-style-type: none;
+      margin-top: 1rem;
+    }
+    
+    li {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
-<body class="purple">
+<body>
   <header>
     <h1 class="heading">Alex Mance</h1>
   </header>
   <main>
+    <section>
+      <h2 class="title">Contact</h2>
+      <p class="subheading">If you would like to get in touch, please fill out the form below and I will get back to you as soon as possible.</p>
+      <ul>
+        <li>
+          <p class="subheader">
+            <a href="mailto:alex@example.com">
+              <img src="./assets/mail.svg" 
+                   alt="Email Icon"
+                   style="width: 24px; height: 24px; margin-right: 0.5rem; padding-top: 0.25rem;"/>
+              alex@asmance.com</a>            
+          </p>
+        </li>
+        <li>
+          <p class="subheader">
+            <a href="https://github.com/alexsmance" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="subheader">
+              <img src="./assets/github.svg" 
+                   alt="GitHub Icon" 
+                   style="
+                     width: 24px; 
+                     height: 24px; 
+                     margin-right: 0.5rem; 
+                     padding-top: 0.25rem;"
+                     color: white;/>
+              @alexsmance</a>
+          </p>
+        </li>
+        <li>
+          <p class="subheader">
+            <a href="https://www.linkedin.com/in/alex-mance" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="subheader">
+              <img src="./assets/linkedin.svg" 
+                   alt="LinkedIn Icon" 
+                   style="width: 24px; height: 24px; margin-right: 0.5rem; padding-top: 0.25rem;"/>
+              @alex-mance</a>
+          </p>
+        </li>
+      </ul>
+    </section>
     <form class="margin-vertical">
       <fieldset class="margin-bottom">
         <label for="name" class="">Name</label>
-        <input type="name" class="depth padding-half" required/>
+        <input type="text" id="name" class="depth padding-half" required/>
       </fieldset>
       <fieldset class="margin-bottom">
         <label for="email">Email</label>
-        <input type="email" class="depth padding-half" required/>
+        <input type="email" id="email" class="depth padding-half" required/>
       </fieldset>
       <button type="submit" class="primary padding margin-vertical subheading text-bold depth">Submit</button>
     </form>
   </main>
+  <footer>
+    <p>&copy; 2026 Alex Mance. All rights reserved.</p>
+  </footer>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      fetch('https://formspree.io/f/mnqvkwqj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email
+        })
+      })      .then(response => {
+        if (response.ok) {
+          alert('Thank you for your submission!');
+          document.querySelector('form').reset();
+        } else {
+          alert('There was a problem with your submission. Please try again.');
+        }
+      })      .catch(error => {
+        console.error('Error:', error);
+        alert('There was a problem with your submission. Please try again.');
+      });
+    });
+  </script>
 </body>
 </html>

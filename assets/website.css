@@ -1,0 +1,42 @@
+@view-transition {
+  navigation: auto;
+}
+
+* {
+  color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 a {
+  background-color: #333333;
+  font-weight: 300;
+  color: white;
+}
+
+header a {
+  background-color: var(--yellow);
+  color: #333333;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: .5rem;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

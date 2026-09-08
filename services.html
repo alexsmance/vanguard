@@ -5,18 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services</title>
   <link href="./assets/terra.css" rel="stylesheet" />
+  <link href="./assets/website.css" rel="stylesheet" />
   <script src="./assets/p5.min.js"></script>
   <style>
-    @view-transition {
-      navigation: auto;
-    }
-
     * {
       color: white;
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-      
     }
 
     body {
@@ -26,151 +22,78 @@
       background-color: #333333;
     }
 
-    /* header { 
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-    } */
-
-    header h1{
-      color: white;
+    .services-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
     }
 
-    main {
-      position: absolute;
-      z-index: 2;
+    .paper h2, .paper p {
+      color: #333333;
     }
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 2rem;
+      align-items: center;
+    }
+
+    section img {
+      width: 100%;
+      max-height: max(auto, 300px);
+    }
+
+    
   </style>
 </head>
 <body>
   <header>
-    <h1 class="heading padding">Alex Mance</h1>
+    <h1 class="heading padding"><a href="./index.html">Alex Mance</a></h1>
+    <a href="./contact.html">Contact</a>
   </header>
-  <main>
-    <p></p>  
+  <main class="container padding">
+    <h2 class="title">Services</h2>
+    <p class="subheading">I offer a range of services to help you achieve your goals. Whether you need web development, design, or consulting, I am here to assist you.</p>
+  
+    <section>
+      <img src="./assets/app-development.svg" alt="App Development">
+      <div class="padding">
+        <h2 class="subtitle">App Development</h2>
+        <p>Design and development of web, mobile and desktop applications to suit your needs.</p>
+      </div>
+    </section>
+
+    <section class="padding">
+      <div class="padding">
+        <h2 class="subtitle">UI/UX Design</h2>
+        <p>Creating intuitive and engaging user interfaces and experiences with modern best practices.</p>
+      </div>
+      <img src="./assets/ui-design.svg" alt="UI/UX Design" />
+    </section>
+
+    <section>
+      <img src="./assets/cloud-infrastructure.svg" alt="Cloud Infrastructure" />
+      <div class="padding">
+        <h2 class="subtitle">Cloud Infrastructure</h2>
+        <p>Building and managing scalable cloud solutions for your business at affordable rates to host your applications.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="padding">
+        <h2 class="subtitle">Illustrations</h2>
+        <p>Creative and custom illustrations to bring your ideas to 
+          life and enhance your brand's visual identity.</p>
+        </div>
+        <img src="./assets/illustrations.svg" alt="Illustrations">
+      </div>
+    </section>
   </main>
-  <script>
 
-    /* variables: A B
-    axiom: A
-    rules: (A => AB), (B => A)
-
-    variables: F+-[]
-    axiom: F
-    rules: F => FF+[+F-F-F]-[-F+F+F]
-    
-    */
-
-    var angle;
-    var axiom = "F";
-    var sentence = axiom;
-    var len = window.innerHeight * 0.3;
-
-    var rules = [];
-
-    /*
-      rules[0] = {
-        a: "A",
-        b: "ABC"
-      }
-
-      rules[1] = {
-         a: "B",
-         b: "A"
-      } 
-    */
-
-    rules[0] = {
-      a: "F",
-      b: "FF+[+F-F-F]-[-F+F+F]"
-    }
-
-    function generate() {
-      len *= 0.5;
-      var nextSentence = "";
-
-      for (var i = 0; i < sentence.length; i++) {
-        var current = sentence.charAt(i);
-        var found = false;
-
-        for(var j = 0; j < rules.length; j++) {
-          if(current == rules[j].a) {
-            found = true;
-            nextSentence += rules[j].b;            
-            break;
-          }          
-        }
-
-        if(!found) {
-          nextSentence += current;
-        }
-      }
-
-      sentence = nextSentence;
-      /* createP(sentence); */
-      turtle();
-
-    }
-
-    function turtle() {
-      background(51);
-      resetMatrix();
-      translate(width / 2, height);
-      stroke(255, 100);
-
-      for(var i = 0; i < sentence.length; i++) {
-        
-        var current = sentence.charAt(i);
-
-        if(current == "F") {
-          line(0, 0, 0, -len);
-          translate(0, -len);
-        }
-        else if(current == "+") {
-          rotate(angle);
-        }
-        else if(current == "-") {
-          rotate(-angle);
-        }
-        else if(current == "\[") {
-          push();
-        }
-        else if(current == "]") {
-          pop();
-        }
-      }
-    }
-
-    function setup() {
-      /* clearCa */
-      createCanvas(windowWidth, windowHeight);
-      angle = radians(25);
-      background(51);      
-      /* // noCanvas(); */
-      /* createP(axiom); */
-      /* turtle(); */
-
-      /* var button = createButton("generate"); */
-      /* button.mousePressed(generate); */
-      generate();
-      generate();
-      generate();
-      generate();
-      generate();
-      noLoop();
-    }
-
-    function windowResized() {
-      resizeCanvas(windowWidth, windowHeight);
-    }
-
-    /* function re() */
-    /* window.addEventListener("resize", () => {
-      windowWidth = window.innerWidth;
-      windowHeight = window.innerHeight;
-      resizeCanvas(windowWidth, windowHeight);            
-    }) */
-  </script>
+  <footer class="padding">
+    <p>&copy; 2026 Alex Mance. All rights reserved.</p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link href="./assets/terra.css" rel="stylesheet" />
+  <link href="./assets/website.css" rel="stylesheet" />
+  <script src="./assets/p5.min.js"></script>
+  <style>
+    main {
+      width: 100%;
+      padding: 1rem;
+      z-index: 1;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html">Alex Mance</a></h1>
+    <a href="contact.html">Contact</a>
+  </header>
+  <main>
+    <section class="margin-bottom">
+      <h2 class="title">Portfolio</h2>
+      <p>I'm a Software Engineer for 12 years based in Bayside.</p>
+      <p>My passion is to create beautiful and functional websites that provide a great user experience. I have a strong background in web development, design, and consulting.</p>
+    </section>
+    <section class="margin-bottom">
+      <h2 class="subtitle margin-bottom">Websites</h2>      
+      <ul class="portfolio-grid-layout">
+        <li>
+          <a href="https://threadheads.com">
+            <img src="./assets/threadheads.png" alt="Threadheads website" />
+            <p class="header">Threadheads</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://eelighting.com.au">
+            <img src="./assets/eelighting.png" alt="E&E Lighting website" />
+            <p class="header">E&E Lighting</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://carrollscoatings.com">
+            <img src="./assets/carrollscoatings.png" alt="Carrolls Coatings website" />
+            <p class="header">Carrolls Coatings</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- <section>
+      <h2 class="title">Personal projects</h2>      
+      <ul>
+        <li><a href="https://threadheads.com">Starfield</a></li>
+        <li><a href="https://eelighting.com.au">Chronos</a></li>
+        <li><a href="https://carrolscoatings.com">Project 3</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="title">Games</h2>      
+      <ul>
+        <li><a href="https://threadheads.com">Pong</a></li>        
+      </ul>
+    </section> -->
+  </main>
+  <footer class="padding">
+    <p>&copy; 2026 Alex Mance. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
