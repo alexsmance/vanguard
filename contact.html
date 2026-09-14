@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Contact | Alex Mance</title>
   <link href="./assets/terra.css" rel="stylesheet" />
   <link href="./assets/website.css" rel="stylesheet" />  
   <style>
@@ -118,7 +118,7 @@
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
 
-      fetch('https://formspree.io/f/mnqvkwqj', {
+      fetch('https://api.asmance.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
