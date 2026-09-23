@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "asmance.com",
+  "Id": "1578c9f9-c72a-40fe-a564-d1bd34c41d06"
+}
