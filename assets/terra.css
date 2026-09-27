@@ -33,11 +33,11 @@
   --icon-large:  2rem;
 
   --padding: 1rem;
-  --padding-half: .5rem;
+  --padding-half: 0.5rem;
   --margin: 1rem;
-  --margin-half: .5rem;
+  --margin-half: 0.5rem;
 
-  --border-radius: .5rem;
+  --border-radius: 0.5rem;
 
   --acrylic-thin: 0.6;
   --acrylic-normal: 0.7;
@@ -128,8 +128,8 @@ body {
 
 blockquote {
   border-left: .3rem solid black;
-  padding: 1em;
-  margin: 1em 0;
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
 /* Typography Modifications */
@@ -245,7 +245,6 @@ form.inset {
   background: #aaaaaa;
 }
 
-
 fieldset {
   display: flex;
   flex-direction: column;
@@ -253,7 +252,7 @@ fieldset {
 }
 
 label + input {
-  
+   
 }
 
 input {
@@ -316,7 +315,7 @@ input {
 }
 
 .margin-horizontal {
-  padding: 0 var(--margin) ;
+  padding: 0 var(--margin);
 }
 
 .margin-horizontal-half {
@@ -324,15 +323,15 @@ input {
 }
 
 .margin-bottom {
-  margin-bottom: var(--padding); 
+  margin-bottom: var(--margin);
 }
 
 /* Code */
-/* code {
-  background: #222;
+code {
+  background: #333333;
   color: greenyellow;
   font-family: 'Courier New', Courier, monospace;
   padding: var(--padding-half);
   border-radius: var(--border-radius);
   filter: blur(8px);
-} */
+}
