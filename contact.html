@@ -75,7 +75,7 @@
         display: flex;
         align-items: center;
       }
-    }
+    }    
   </style>
 </head>
 <body>
@@ -95,7 +95,8 @@
               <a href="mailto:alex@example.com">
                 <img src="./assets/mail.svg" 
                      alt="Email Icon"
-                     style="width: 24px; height: 24px; margin-right: 0.5rem; padding-top: 0.25rem;"/>
+                     style="width: 24px; height: 24px; margin-right: 0.5rem; padding-top: 0.25rem;"
+                     class="icon"/>
                 alex@asmance.com</a>            
             </p>
           </li>
@@ -112,7 +113,7 @@
                        height: 24px; 
                        margin-right: 0.5rem; 
                        padding-top: 0.25rem;"
-                       color: white;/>
+                       class="icon"/>
                 @alexsmance</a>
             </p>
           </li>
@@ -124,7 +125,8 @@
                  class="subheader">
                 <img src="./assets/linkedin.svg" 
                      alt="LinkedIn Icon" 
-                     style="width: 24px; height: 24px; margin-right: 0.5rem; padding-top: 0.25rem;"/>
+                     style="width: 24px; height: 24px; margin-right: 0.5rem; padding-top: 0.25rem;"
+                     class="icon"/>
                 @alex-mance</a>
             </p>
           </li>
@@ -134,11 +136,11 @@
       <section>
         <form class="paper padding margin-vertical">
           <fieldset class="margin-bottom">
-            <label for="name" class="">Name:</label>
+            <label for="name" style="color: white;">Name:</label>
             <input type="text" id="name" class="depth padding-half" required/>
           </fieldset>
           <fieldset class="margin-bottom">
-            <label for="email">Email:</label>
+            <label for="email" style="color: white;">Email:</label>
             <input type="email" id="email" class="depth padding-half" required/>
           </fieldset>
           <button type="submit" class="primary padding margin-vertical subheading text-bold depth">Submit</button>
@@ -147,7 +149,7 @@
     </div>
   </main>
   <footer class="padding">
-    <p>&copy; 2026 Alex Mance. All rights reserved.</p>
+    <p class="uppercase">&copy; 2026 Alex Mance. All rights reserved.</p>
   </footer>
   <script>
     document.querySelector('form').addEventListener('submit', function(event) {
